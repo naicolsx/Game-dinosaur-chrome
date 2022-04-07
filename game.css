@@ -1,137 +1,119 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
-body{
-    height: 100vh;
-    display: flex;
-    align-items: center;
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
 }
 
-.contenedor {
-    width: 920px;
-    height: 280px;
-    margin: 0 auto;
-    
-    position: relative;
-
-    background: linear-gradient(#b7d6c7, transparent) #ffe2d1;/*linear-gradient(#90ebff, white);*/
-    transition: background-color 1s linear;
-    overflow: hidden;
+.container {
+  background: linear-gradient(#b7d6c7, transparent) #ffe2d1; /*linear-gradient(#90ebff, white);*/
+  height: 280px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 1s linear;
+  width: 920px;
 }
 
 .mediodia {
-    background-color: #ffdcf3;
+  background-color: #ffdcf3;
 }
 
 .tarde {
-    background-color: #ffadad;
+  background-color: #ffadad;
 }
 
 .noche {
-    background-color: #aca8c7;
+  background-color: #aca8c7;
 }
 
 .dino {
-    width: 84px;
-    height: 84px;
-
-    position: absolute;
-    bottom: 22px;
-    left: 42px;
-    z-index: 2;
-
-    background: url(Images/dino.png) repeat-x 0px 0px;
-    background-size: 336px 84px;
-    background-position-x: 0px;
-
+  background: url(Images/dino.png) repeat-x 0px 0px;
+  background-size: 336px 84px;
+  background-position-x: 0px;
+  bottom: 22px;
+  height: 84px;
+  left: 42px;
+  position: absolute;
+  width: 84px;
+  z-index: 2;
 }
 
-.dino-corriendo {
-    animation: animarDino 0.25s steps(2) infinite;
+.dino-run {
+  animation: animarDino 0.25s steps(2) infinite;
 }
-.dino-estrellado {
+.dino-die {
+  background-position-x: -252px;
+}
+
+.base {
+  background: url(./Images/base.png) repeat-x 0px 0px;
+  background-size: 50% 42px;
+  bottom: 0;
+  height: 42px;
+  left: 0;
+  position: absolute;
+  width: 200%;
+}
+
+.cactus {
+  background: url(Images/cactus1.png) no-repeat;
+  bottom: 16px;
+  height: 96px;
+  left: 600px;
+  position: absolute;
+  width: 46px;
+  z-index: 1;
+}
+.cactus2 {
+  background: url(Images/cactus2.png) no-repeat;
+  height: 66px;
+  width: 98px;
+}
+
+.nube {
+  background: url(Images/nube.png) no-repeat;
+  background-size: 92px 26px;
+  height: 26px;
+  position: absolute;
+  width: 92px;
+  z-index: 0;
+}
+
+.score {
+  color: #d48871;
+  font-family: Verdana;
+  font-size: 30px;
+  font-weight: bold;
+  height: 30px;
+  position: absolute;
+  right: 15px;
+  text-align: right;
+  top: 5px;
+  width: 100px;
+  z-index: 10;
+}
+
+.game-over {
+  color: #7e928b;
+  display: none;
+  font-size: 30px;
+  font-family: Verdana;
+  font-weight: 700;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+@keyframes animarDino {
+  from {
+    background-position-x: -84px;
+  }
+  to {
     background-position-x: -252px;
-}
-
-.suelo {
-    width: 200%;
-    height: 42px;
-
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    background: url(./Images/suelo.png) repeat-x 0px 0px;
-    background-size: 50% 42px;
-
-}
-
-.cactus{
-    width: 46px;
-    height: 96px;
-
-    position: absolute;
-    bottom: 16px;
-    left: 600px;
-    z-index: 1;
-
-    background: url(Images/cactus1.png) no-repeat;
-}
-.cactus2{
-    width: 98px;
-    height: 66px;
-
-    background: url(Images/cactus2.png) no-repeat;
-}
-
-.nube{
-    width: 92px;
-    height: 26px;
-
-    position: absolute;
-    z-index: 0;
-
-    background: url(Images/nube.png) no-repeat;
-    background-size: 92px 26px;
-}
-
-.score{
-    width: 100px;
-    height: 30px;
-
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    z-index: 10;
-
-    color: #d48871;
-    font-family: Verdana;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: right;
-}
-
-.game-over{
-    display: none;
-
-    position: absolute;
-    width: 100%;
-
-
-    text-align: center;
-    color: #7e928b;
-    font-size: 30px;
-    font-family: Verdana;
-    font-weight: 700;
-}
-
-@keyframes animarDino{
-    from{
-        background-position-x: -84px;
-    }
-    to{
-        background-position-x: -252px;
-    }
+  }
 }
